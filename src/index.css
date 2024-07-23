@@ -27,6 +27,12 @@ a {
   font-weight: bold;
 }
 
+.row {
+  font-size: 1.2em;
+  padding: 1em;
+  --bs-gutter-x: 0;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

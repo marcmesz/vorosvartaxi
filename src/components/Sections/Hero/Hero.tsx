@@ -2,7 +2,7 @@ import "./Hero.css"
 import { MdCall } from "react-icons/md"
 import { Element } from "react-scroll"
 
-export default function Hero() {
+const Hero = () => {
   return (
     <Element className="hero" name="#kezdolap">
       <div className="animate-hero hero-content">
@@ -19,3 +19,5 @@ export default function Hero() {
     </Element>
   )
 }
+
+export default Hero
