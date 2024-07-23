@@ -1,13 +1,6 @@
-interface Action {
-  type: string
-  payload: string
-}
+export type Action = { type: string; payload: string }
 
-export interface IState {
-  locale: string
-}
-
-const initialState: IState = {
+const initialState = {
   locale: "hu"
 }
 

@@ -1,12 +1,16 @@
 import { createContext } from "react"
+import { Action } from "../reducers"
 
-const StateContext = createContext({
-  state: { locale: "hu" },
-  dispatch: ({ type, payload }: { type: string; payload: string }) => {
-    return {
-      type,
-      payload
-    }
+export interface StateContextType {
+  state: {
+    locale: string
   }
+  dispatch: React.Dispatch<Action>
+}
+
+const StateContext = createContext<StateContextType>({
+  state: { locale: "hu" },
+  dispatch: () => null
 })
+
 export default StateContext
