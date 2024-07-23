@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --theme: #ffc000;
+  --light: #fff;
+  --dark: #333;
+}
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

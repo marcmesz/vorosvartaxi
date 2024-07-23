@@ -1,0 +1,117 @@
+import "./Header.css"
+import { useContext } from "react"
+import StateContext from "../../context/StateContext"
+import { useState, useEffect } from "react"
+import { Link } from "react-scroll"
+import MobileHeader from "./MobileHeader"
+import LangIcon from "./LangIcon"
+import VorosvarTaxiLogo from "./VorosvarTaxiLogo"
+import { FormattedMessage } from "react-intl"
+
+export default function Header() {
+  const { state } = useContext(StateContext)
+  const { dispatch } = useContext(StateContext)
+  const lang = state.locale
+  const navItemsLeft = ["header.kezdolap", "header.szolgaltatasok"]
+  const navItemsRight = ["header.partnereink", "header.kapcsolat"]
+  const menuClasses = "menu-link menu-item"
+  const duration = 100
+  let currentLang = ""
+
+  const [navSize, setnavSize] = useState("4rem")
+  const [navColor, setnavColor] = useState("transparent")
+  const [navScroll, setnavScroll] = useState("")
+
+  const listenScrollEvent = () => {
+    window.scrollY > 10
+      ? setnavColor("rgba(0,0,0,0.8)")
+      : setnavColor("transparent")
+    window.scrollY > 10 ? setnavSize("4rem") : setnavSize("4rem")
+    window.scrollY > 10 ? setnavScroll("nav-scroll") : setnavScroll("")
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent)
+    return () => {
+      window.removeEventListener("scroll", listenScrollEvent)
+    }
+  }, [])
+
+  const handleLanguage = () => {
+    lang === "hu"
+      ? (currentLang = "en")
+      : lang === "en"
+      ? (currentLang = "de")
+      : (currentLang = "hu")
+    dispatch({ type: "SET_LOCALE", payload: currentLang })
+  }
+
+  return (
+    <>
+      <nav
+        style={{
+          backgroundColor: navColor,
+          height: navSize,
+          transition: "all 800ms"
+        }}
+        className={`${navScroll} d-none d-md-block`}
+      >
+        <div className="container menu">
+          <div className="menu-left">
+            {navItemsLeft.map((link, index) => {
+              return (
+                <Link
+                  key={index}
+                  activeClass="active-menu"
+                  to={`#${link.split(".")[1]}`}
+                  className={menuClasses}
+                  spy
+                  smooth
+                  duration={duration}
+                >
+                  <FormattedMessage id={link} />
+                </Link>
+              )
+            })}
+          </div>
+
+          <VorosvarTaxiLogo duration={duration} />
+
+          <div className="menu-right">
+            {navItemsRight.map((link, index) => {
+              return (
+                <Link
+                  key={index}
+                  activeClass="active-menu"
+                  to={`#${link.split(".")[1]}`}
+                  className={menuClasses}
+                  spy
+                  smooth
+                  duration={duration}
+                >
+                  <FormattedMessage id={link} />
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+        <LangIcon handleLanguage={handleLanguage} state={state} lang={lang} />
+      </nav>
+      <MobileHeader
+        style={{
+          backgroundColor: navColor,
+          transition: "all 800ms"
+        }}
+        langIcon={
+          <LangIcon
+            handleLanguage={handleLanguage}
+            state={state}
+            lang={lang}
+            isMobile
+          />
+        }
+        logo={<VorosvarTaxiLogo duration={duration} />}
+      />
+    </>
+  )
+}

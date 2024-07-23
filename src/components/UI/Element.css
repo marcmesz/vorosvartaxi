@@ -1,0 +1,23 @@
+.element {
+  margin-bottom: 64px;
+}
+
+.element::before {
+  content: "";
+  display: block;
+  height: 64px;
+  margin: -64px 0 0;
+}
+
+@media (max-width: 767.98px) {
+  .element {
+    margin-bottom: 76px;
+  }
+
+  .element::before {
+    content: "";
+    display: block;
+    height: 76px;
+    margin: -76px 0 0;
+  }
+}

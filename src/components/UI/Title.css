@@ -1,0 +1,28 @@
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  margin: 0;
+  padding: 1em;
+  background-color: var(--theme);
+  color: #000;
+  letter-spacing: -3px;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+  transition: all 1000ms;
+}
+
+@media (max-width: 1000px) {
+  .section-title {
+    font-size: 3.2em;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: 2em;
+    letter-spacing: -1px;
+    padding: 0.5em;
+  }
+}
