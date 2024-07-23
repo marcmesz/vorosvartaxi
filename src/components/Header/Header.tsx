@@ -9,8 +9,7 @@ import VorosvarTaxiLogo from "./VorosvarTaxiLogo"
 import { FormattedMessage } from "react-intl"
 
 export default function Header() {
-  const { state } = useContext(StateContext)
-  const { dispatch } = useContext(StateContext)
+  const { state, dispatch } = useContext(StateContext)
   const lang = state.locale
   const navItemsLeft = ["header.kezdolap", "header.szolgaltatasok"]
   const navItemsRight = ["header.partnereink", "header.kapcsolat"]
@@ -95,21 +94,14 @@ export default function Header() {
             })}
           </div>
         </div>
-        <LangIcon handleLanguage={handleLanguage} state={state} lang={lang} />
+        <LangIcon setLocale={handleLanguage} lang={lang} />
       </nav>
       <MobileHeader
         style={{
           backgroundColor: navColor,
           transition: "all 800ms"
         }}
-        langIcon={
-          <LangIcon
-            handleLanguage={handleLanguage}
-            state={state}
-            lang={lang}
-            isMobile
-          />
-        }
+        langIcon={<LangIcon setLocale={handleLanguage} lang={lang} isMobile />}
         logo={<VorosvarTaxiLogo duration={duration} />}
       />
     </>

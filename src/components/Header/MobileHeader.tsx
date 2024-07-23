@@ -1,10 +1,18 @@
 import { useState } from "react"
-import MobileIcon from "./MobileIcon"
+import MobileIcon from "../../images/svg/ico-mobile-menu.svg?react"
 import { Offcanvas } from "react-bootstrap"
 import { Link } from "react-scroll"
 import { FormattedMessage } from "react-intl"
 
-const MobileHeader = ({ style, logo, langIcon }) => {
+interface Props {
+  style?: {
+    [key: string]: string
+  }
+  logo?: JSX.Element
+  langIcon?: JSX.Element
+}
+
+const MobileHeader = ({ style, logo, langIcon }: Props) => {
   const [show, setShow] = useState(false)
 
   const navItems = [

@@ -1,12 +1,21 @@
 import EN from "../../images/uk.png"
 import HU from "../../images/hu.png"
 import DE from "../../images/de.png"
+import { useContext } from "react"
+import StateContext from "../../context/StateContext"
 
-const LangIcon = ({ handleLanguage, lang, state, isMobile }) => {
+interface Props {
+  setLocale: () => void
+  lang: string
+  isMobile?: boolean
+}
+
+const LangIcon = ({ setLocale, lang, isMobile }: Props) => {
+  const { state } = useContext(StateContext)
   return (
     <div
       className="language-icon"
-      onClick={handleLanguage}
+      onClick={setLocale}
       title={lang === "hu" ? "Magyar" : lang === "en" ? "English" : "Deutsch"}
     >
       <span className={isMobile ? "d-block" : ""}>

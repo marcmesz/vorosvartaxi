@@ -1,6 +1,10 @@
 import { Link } from "react-scroll"
 
-const VorosvarTaxiLogo = ({ duration }) => {
+interface Props {
+  duration?: number
+}
+
+const VorosvarTaxiLogo = ({ duration }: Props) => {
   return (
     <div className="menu-center">
       <Link

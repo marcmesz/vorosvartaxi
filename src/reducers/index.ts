@@ -3,7 +3,11 @@ interface Action {
   payload: string
 }
 
-const initialState = {
+export interface IState {
+  locale: string
+}
+
+const initialState: IState = {
   locale: "hu"
 }
 
