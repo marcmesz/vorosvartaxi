@@ -4,13 +4,18 @@ import InfoIcon from "../../../images/svg/ico-info.svg?react"
 
 const InfoTable = () => {
   return (
-    <Row>
-      <Col md={12}>
-        <Alert variant="warning" className="fw-bold">
-          <InfoIcon />
-          <span className="ms-2">
-            <FormattedMessage id="bemutatkozas.felhivas" />
-          </span>
+    <Row className="p-0">
+      <Col md={12} className="mb-3">
+        <Alert variant="warning" className="d-flex align-items-center">
+          <InfoIcon className="flex-shrink-0" />
+          <div className="ms-3 d-flex flex-column">
+            <span className="fw-bold">
+              <FormattedMessage id="bemutatkozas.felhivas" />
+            </span>
+            <span>
+              <FormattedMessage id="bemutatkozas.felhivas.content1" />
+            </span>
+          </div>
         </Alert>
       </Col>
       <Col md={12}>
@@ -49,9 +54,6 @@ const InfoTable = () => {
             </tr>
           </tbody>
         </Table>
-      </Col>
-      <Col>
-        <FormattedMessage id="bemutatkozas.welcome" />
       </Col>
     </Row>
   )
