@@ -11,7 +11,8 @@ const Contact = () => {
   return (
     <Element name="#kapcsolat" className="element mb-0">
       <Title id="header.kapcsolat" />
-      <Row className="d-flex flex-column flex-md-row align-items-center">
+      <Row className="d-flex flex-column flex-md-row align-items-center my-0 my-md-5">
+        <span className="my-0 my-md-3"></span>
         <Col className="d-flex flex-column align-items-center align-items-md-end py-4 py-md-5 my-0 my-md-5">
           <div className="d-flex flex-column align-items-center">
             <h3 className="fw-bold">
@@ -42,6 +43,7 @@ const Contact = () => {
             </div>
           </div>
         </Col>
+        <span className="my-0 my-md-3"></span>
       </Row>
     </Element>
   )
