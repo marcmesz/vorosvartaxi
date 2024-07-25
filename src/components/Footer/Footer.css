@@ -1,0 +1,8 @@
+.made-by-link img {
+  opacity: 0.5;
+  transition: all 1s;
+}
+
+.made-by-link img:hover {
+  opacity: 1;
+}

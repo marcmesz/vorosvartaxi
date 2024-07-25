@@ -24,5 +24,9 @@
   "szolgaltatasok.pontossag": "Pontosság, minőség, megbízhatóság, diszkréció",
   "szolgaltatasok.welcome": "Sok szeretettel várjuk utasainkat, ügyfeleinket!",
   "kapcsolat.kerdese-van": "Kérdése van? Előrendelne?",
-  "kapcsolat.keressen-bizalommal": "Keressen bizalommal minket!"
+  "kapcsolat.keressen-bizalommal": "Keressen bizalommal minket!",
+  "footer.made-by": "Honlapkészítés:",
+  "footer.cc.btn": "Rendben",
+  "footer.cc.title": "Ez a weboldal sütiket használ.",
+  "footer.cc.content": "A sütik elfogadásával kényelmesebbé teheted a böngészést. A honlap további használatával hozzájárulsz a sütik használatához."
 }
