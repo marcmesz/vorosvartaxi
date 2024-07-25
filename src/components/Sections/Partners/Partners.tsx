@@ -22,7 +22,11 @@ const Partners = () => {
                     className="w-100 rounded"
                     style={{ maxWidth: "75%" }}
                   />
-                  <a className="mt-4 btn btn-warning btn-md" href={partner.url}>
+                  <a
+                    className="mt-4 btn btn-warning btn-md"
+                    href={partner.url}
+                    target={partner.target}
+                  >
                     {partner.url.substring(8).slice(0, -1)}
                   </a>
                 </div>

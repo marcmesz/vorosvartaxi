@@ -5,7 +5,7 @@ import { Row, Col, Image } from "react-bootstrap"
 import { FaPhoneAlt } from "react-icons/fa"
 import { MdOutlineMail } from "react-icons/md"
 import { FormattedMessage } from "react-intl"
-import LogoSrc from "/logo4.png"
+import LogoSrc from "../../../images/logo4.png"
 
 const Contact = () => {
   return (

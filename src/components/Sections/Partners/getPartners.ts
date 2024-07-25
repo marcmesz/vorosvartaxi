@@ -8,12 +8,12 @@ import wiluSrc from "../../../images/partners/wilu.jpg"
 
 export const getPartners = () => {
   return [
-    { src: csaliSrc, url: "https://www.csalicsarda.hu/" },
-    { src: fedaszSrc, url: "https://www.fedaszdental.hu/" },
-    { src: gulygliSrc, url: "https://www.gulyglicar.hu/" },
-    { src: hofstadterSrc, url: "https://www.hofstadter.hu/" },
-    { src: rotiSrc, url: "https://www.rotburger.hu/" },
-    { src: ujvariSrc, url: "https://www.ujvarigumi.hu/" },
-    { src: wiluSrc, url: "https://www.wilu-auto.hu/" }
+    { src: csaliSrc, url: "https://www.csalicsarda.hu/", target: "_blank" },
+    { src: fedaszSrc, url: "https://www.fedaszdental.hu/", target: "_blank" },
+    { src: gulygliSrc, url: "https://www.gulyglicar.hu/", target: "_blank" },
+    { src: hofstadterSrc, url: "https://www.hofstadter.hu/", target: "_blank" },
+    { src: rotiSrc, url: "https://www.rotburger.hu/", target: "_blank" },
+    { src: ujvariSrc, url: "https://www.ujvarigumi.hu/", target: "_blank" },
+    { src: wiluSrc, url: "https://www.wilu-auto.hu/", target: "_blank" }
   ]
 }

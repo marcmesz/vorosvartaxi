@@ -1,4 +1,5 @@
 import { Link } from "react-scroll"
+import LogoSrc from "../../images/logo4.png"
 
 interface Props {
   duration?: number
@@ -15,12 +16,7 @@ const VorosvarTaxiLogo = ({ duration }: Props) => {
         duration={duration}
         style={{ cursor: "pointer" }}
       >
-        <img
-          src="./logo4.png"
-          className="menu-logo"
-          alt=""
-          title="Vörösvár Taxi"
-        />
+        <img src={LogoSrc} className="menu-logo" alt="" title="Vörösvár Taxi" />
       </Link>
     </div>
   )

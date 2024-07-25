@@ -3,7 +3,7 @@ import "../../UI/Element.css"
 import Title from "../../UI/Title"
 import { Row, Col } from "react-bootstrap"
 import InfoTable from "./InfoTable"
-import LogoSrc from "/logo4.png"
+import LogoSrc from "../../../images/logo4.png"
 
 const Introduction = () => {
   return (

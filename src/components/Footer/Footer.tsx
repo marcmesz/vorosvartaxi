@@ -1,7 +1,7 @@
+import "./Footer.css"
 import { Row, Col, Image } from "react-bootstrap"
 import { FormattedMessage } from "react-intl"
-import WebMarketSrc from "/webmarket.png"
-import "./Footer.css"
+import WebMarketSrc from "../../images/webmarket.png"
 import CookieConsent from "react-cookie-consent"
 
 export default function Footer() {
