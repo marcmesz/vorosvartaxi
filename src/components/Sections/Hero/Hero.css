@@ -105,6 +105,11 @@
 }
 
 @media (max-width: 767.98px) {
+  .hero {
+    object-fit: cover;
+    background-attachment: unset;
+    background-position-x: -220px;
+  }
   .hero-title {
     font-size: 5em;
   }
