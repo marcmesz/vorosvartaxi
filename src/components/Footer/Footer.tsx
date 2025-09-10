@@ -2,7 +2,7 @@ import "./Footer.css"
 import { Row, Col, Image } from "react-bootstrap"
 import { FormattedMessage } from "react-intl"
 import WebMarketSrc from "../../images/webmarket.png"
-import CookieConsent from "react-cookie-consent"
+import CookieBanner from "../CookieBanner/CookieBanner"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -27,25 +27,8 @@ export default function Footer() {
             </Col>
           </Row>
         </div>
+        <CookieBanner />
       </div>
-      <CookieConsent
-        buttonStyle={{ backgroundColor: "#ffc000" }}
-        buttonWrapperClasses="align-self-center"
-        buttonClasses="rounded py-2 px-3 text-uppercase fw-bold fs-5"
-        buttonText={<FormattedMessage id="footer.cc.btn" />}
-        contentStyle={{ margin: 0 }}
-        contentClasses="m-4"
-        containerClasses="justify-content-center"
-      >
-        <section className="d-flex flex-column m-0">
-          <span className="fw-bold">
-            <FormattedMessage id="footer.cc.title" />
-          </span>
-          <span className="text-warning">
-            <FormattedMessage id="footer.cc.content" />
-          </span>
-        </section>
-      </CookieConsent>
     </>
   )
 }
