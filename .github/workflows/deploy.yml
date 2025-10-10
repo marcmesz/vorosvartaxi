@@ -2,7 +2,7 @@ name: Deploy Vite React app to GitHub Pages
 
 on:
   push:
-    branches: [main] # vagy a te fő branch-ed, pl. master
+    branches: [main]
 
 permissions:
   contents: read
