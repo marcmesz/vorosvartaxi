@@ -1,10 +1,16 @@
 {
-  "hosting": [
-    {
-      "target": "vorosvartaxi",
-      "public": "build",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [{ "source": "**", "destination": "/index.html" }]
-    }
-  ]
+  "hosting": {
+    "public": "build",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/vorosvartaxi/**",
+        "destination": "/vorosvartaxi/index.html"
+      },
+      {
+        "source": "/react-mobx-todolist/**",
+        "destination": "/react-mobx-todolist/index.html"
+      }
+    ]
+  }
 }
