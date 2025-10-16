@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "github-50dc6"
+  },
+  "targets": {
+    "github-50dc6": {
+      "hosting": {
+        "vorosvartaxi": [
+          "vorosvartaxi"
+        ]
+      }
+    }
   }
 }
