@@ -1,4 +1,4 @@
-name: Deploy to shared Firebase Hosting
+name: Deploy vorosvartaxi
 
 on:
   push:
@@ -6,45 +6,15 @@ on:
       - main
 
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Repo klónozása
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      # 2️⃣ Node környezet előkészítése
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "npm"
-
-      # 3️⃣ Függőségek telepítése
-      - name: Install dependencies
-        run: npm ci
-
-      # 4️⃣ Build futtatása
-      - name: Build app
-        run: npm run build
-        env:
-          CI: false
-
-      # 5️⃣ Build fájlok másolása közös deploy mappába (alkönyvtárba)
-      - name: Prepare build folder for shared Firebase deploy
-        run: |
-          APP_NAME=$(basename $GITHUB_REPOSITORY)
-          mkdir -p ../firebase-deploy/$APP_NAME
-          cp -r build/* ../firebase-deploy/$APP_NAME
-          echo "Prepared deploy folder for $APP_NAME"
-          cd ../firebase-deploy
-          echo "Current deploy structure:"
-          ls -R .
-
-      # 6️⃣ Deploy Firebase Hostingba (ugyanabba a projektbe)
-      - name: Deploy to Firebase Hosting
-        run: |
-          npx firebase deploy --only hosting --project github-50dc6
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_DEPLOY_TOKEN }}
+          node-version: 22
+      - run: npm ci
+      - run: npm run build
+      - run: npm install -g firebase-tools
+      - run: firebase deploy --only hosting --project github-50dc6 --token "${{ secrets.FIREBASE_TOKEN }}"
