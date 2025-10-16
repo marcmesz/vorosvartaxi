@@ -7,11 +7,9 @@
       "hosting": {
         "vorosvartaxi": [
           "vorosvartaxi"
-        ],
-        "react-mobx-todolist": [
-          "react-mobx-todolist"
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }
