@@ -1,4 +1,4 @@
-name: Deploy vorosvartaxi
+name: Deploy vorosvar-taxi
 
 on:
   push:

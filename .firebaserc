@@ -5,8 +5,8 @@
   "targets": {
     "github-50dc6": {
       "hosting": {
-        "vorosvartaxi": [
-          "vorosvartaxi"
+        "vorosvar-taxi": [
+          "vorosvar-taxi"
         ]
       }
     }
