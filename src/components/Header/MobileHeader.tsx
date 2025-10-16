@@ -26,9 +26,20 @@ const MobileHeader = ({ style, logo, langIcon }: Props) => {
     setShow(false)
   }
 
+  const navStyle: { [key: string]: string } = {
+    ...(style || {}),
+    position: "fixed",
+    top: "0",
+    left: "0",
+    right: "0",
+    transition: "background-color 200ms",
+    paddingTop: "env(safe-area-inset-top)",
+    WebkitPaddingTop: "constant(safe-area-inset-top)"
+  }
+
   return (
     <>
-      <nav className="nav-mobile d-md-none" style={style}>
+      <nav className="nav-mobile d-md-none" style={navStyle}>
         <div className="menu">
           {langIcon}
           {logo}
@@ -37,7 +48,12 @@ const MobileHeader = ({ style, logo, langIcon }: Props) => {
           </span>
         </div>
       </nav>
-      <Offcanvas show={show} onHide={() => setShow(false)} placement="end">
+      <Offcanvas
+        show={show}
+        onHide={() => setShow(false)}
+        placement="end"
+        scroll
+      >
         <Offcanvas.Header closeButton></Offcanvas.Header>
         <Offcanvas.Body>
           {navItems.map((item, index) => (

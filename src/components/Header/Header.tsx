@@ -98,14 +98,7 @@ export default function Header() {
       </nav>
       <MobileHeader
         style={{
-          backgroundColor: navColor,
-          transition: "all 800ms",
-          position: "fixed",
-          top: "0px",
-          left: "0px",
-          right: "0px",
-          paddingTop: "env(safe-area-inset-top)",
-          WebkitPaddingTop: "constant(safe-area-inset-top)"
+          backgroundColor: navColor
         }}
         langIcon={<LangIcon setLocale={handleLanguage} lang={lang} isMobile />}
         logo={<VorosvarTaxiLogo duration={duration} />}
