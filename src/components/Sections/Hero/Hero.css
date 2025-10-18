@@ -104,6 +104,20 @@
   }
 }
 
+@media (max-width: 1381px) {
+  .hero {
+    background-attachment: unset;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    object-fit: cover;
+    background-attachment: unset;
+    background-position-x: -220px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .hero {
     object-fit: cover;
