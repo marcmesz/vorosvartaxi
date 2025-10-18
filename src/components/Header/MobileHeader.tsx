@@ -40,7 +40,7 @@ const MobileHeader = ({ style, logo, langIcon }: Props) => {
   return (
     <>
       <Nav
-        className="d-lg-none z-2 d-flex justify-content-between align-items-center"
+        className="d-lg-none z-2 d-flex justify-content-between align-items-center px-3"
         style={navStyle}
       >
         {langIcon}
