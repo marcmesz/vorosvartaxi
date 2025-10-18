@@ -1,5 +1,5 @@
 import { createContext } from "react"
-import { Action } from "../reducers"
+import { Action, SupportedLocale } from "../reducers"
 
 export interface StateContextType {
   state: {
@@ -9,7 +9,7 @@ export interface StateContextType {
 }
 
 const StateContext = createContext<StateContextType>({
-  state: { locale: "hu" },
+  state: { locale: "hu" as SupportedLocale },
   dispatch: () => null
 })
 

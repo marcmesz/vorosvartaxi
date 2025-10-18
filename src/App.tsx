@@ -22,7 +22,7 @@ interface Messages {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const locale = state.locale
+  const { locale } = state
 
   const messages: Messages = {
     hu: messages_hu,

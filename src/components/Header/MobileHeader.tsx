@@ -1,6 +1,6 @@
 import { useState } from "react"
 import MobileIcon from "../../images/svg/ico-mobile-menu.svg?react"
-import { Offcanvas } from "react-bootstrap"
+import { Nav, Offcanvas } from "react-bootstrap"
 import { Link } from "react-scroll"
 import { FormattedMessage } from "react-intl"
 
@@ -39,21 +39,18 @@ const MobileHeader = ({ style, logo, langIcon }: Props) => {
 
   return (
     <>
-      <nav className="nav-mobile d-md-none" style={navStyle}>
-        <div className="menu">
-          {langIcon}
-          {logo}
-          <span style={{ cursor: "pointer" }} onClick={() => setShow(true)}>
-            <MobileIcon />
-          </span>
-        </div>
-      </nav>
-      <Offcanvas
-        show={show}
-        onHide={() => setShow(false)}
-        placement="end"
-        scroll
+      <Nav
+        className="d-lg-none z-2 d-flex justify-content-between align-items-center"
+        style={navStyle}
       >
+        {langIcon}
+        {logo}
+        <MobileIcon
+          style={{ cursor: "pointer" }}
+          onClick={() => setShow(true)}
+        />
+      </Nav>
+      <Offcanvas show={show} onHide={() => setShow(false)} placement="end">
         <Offcanvas.Header closeButton></Offcanvas.Header>
         <Offcanvas.Body>
           {navItems.map((item, index) => (

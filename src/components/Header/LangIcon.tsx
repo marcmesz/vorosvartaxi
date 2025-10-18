@@ -4,26 +4,21 @@ import DE from "../../images/de.png"
 import { useContext } from "react"
 import StateContext from "../../context/StateContext"
 
-interface Props {
-  setLocale: () => void
-  lang: string
-  isMobile?: boolean
-}
-
-const LangIcon = ({ setLocale, lang, isMobile }: Props) => {
-  const { state } = useContext(StateContext)
+const LangIcon = () => {
+  const { state, dispatch } = useContext(StateContext)
+  const { locale } = state
   return (
     <div
       className="language-icon"
-      onClick={setLocale}
-      title={lang === "hu" ? "Magyar" : lang === "en" ? "English" : "Deutsch"}
+      onClick={() => dispatch({ type: "SET_LOCALE" })}
+      title={
+        locale === "hu" ? "Magyar" : locale === "en" ? "English" : "Deutsch"
+      }
     >
-      <span className={isMobile ? "d-block" : ""}>
-        {state.locale.toUpperCase()}
-      </span>
+      <span className={""}>{state.locale.toUpperCase()}</span>
       <img
         width="26px"
-        src={lang === "hu" ? HU : lang === "en" ? EN : DE}
+        src={locale === "hu" ? HU : locale === "en" ? EN : DE}
         alt=""
       />
     </div>

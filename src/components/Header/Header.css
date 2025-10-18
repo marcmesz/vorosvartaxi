@@ -105,33 +105,42 @@ nav {
   display: block;
 }
 
-.nav-mobile {
-  top: 0;
-}
-
-@media (max-width: 991.98px) {
-  nav {
-    top: 30px;
+@media (max-width: 991px) {
+  .menu-center {
+    position: static;
+    transform: unset;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
-  .menu-logo {
-    height: 110px;
-    width: 110px;
-  }
-}
 
-@media (max-width: 767.98px) {
   .language-icon {
     position: relative;
     right: 0;
     top: unset;
     transform: unset;
+    min-width: 50px;
+    margin-left: 1em;
   }
 
   .language-icon span {
-    margin-left: 0.5em;
+    display: inline;
     order: 2;
+    margin-right: 0;
+    margin-left: 0.5em;
   }
 
+  .menu-logo {
+    height: 110px;
+    width: 110px;
+  }
+
+  .nav svg {
+    min-width: 50px;
+    margin-right: 0.5em;
+  }
+}
+
+@media (max-width: 768px) {
   .menu-logo {
     height: 64px;
     width: 64px;

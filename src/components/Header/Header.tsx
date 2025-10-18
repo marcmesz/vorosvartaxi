@@ -1,6 +1,4 @@
 import "./Header.css"
-import { useContext } from "react"
-import StateContext from "../../context/StateContext"
 import { useState, useEffect } from "react"
 import { Link } from "react-scroll"
 import MobileHeader from "./MobileHeader"
@@ -9,13 +7,10 @@ import VorosvarTaxiLogo from "./VorosvarTaxiLogo"
 import { FormattedMessage } from "react-intl"
 
 export default function Header() {
-  const { state, dispatch } = useContext(StateContext)
-  const lang = state.locale
   const navItemsLeft = ["header.kezdolap", "header.szolgaltatasok"]
   const navItemsRight = ["header.partnereink", "header.kapcsolat"]
   const menuClasses = "menu-link menu-item"
   const duration = 100
-  let currentLang = ""
 
   const [navSize, setnavSize] = useState("4rem")
   const [navColor, setnavColor] = useState("transparent")
@@ -36,15 +31,6 @@ export default function Header() {
     }
   }, [])
 
-  const handleLanguage = () => {
-    lang === "hu"
-      ? (currentLang = "en")
-      : lang === "en"
-      ? (currentLang = "de")
-      : (currentLang = "hu")
-    dispatch({ type: "SET_LOCALE", payload: currentLang })
-  }
-
   return (
     <>
       <nav
@@ -53,7 +39,7 @@ export default function Header() {
           height: navSize,
           transition: "all 800ms"
         }}
-        className={`${navScroll} d-none d-md-block`}
+        className={`${navScroll} d-none d-lg-block`}
       >
         <div className="container menu">
           <div className="menu-left">
@@ -94,13 +80,13 @@ export default function Header() {
             })}
           </div>
         </div>
-        <LangIcon setLocale={handleLanguage} lang={lang} />
+        <LangIcon />
       </nav>
       <MobileHeader
         style={{
           backgroundColor: navColor
         }}
-        langIcon={<LangIcon setLocale={handleLanguage} lang={lang} isMobile />}
+        langIcon={<LangIcon />}
         logo={<VorosvarTaxiLogo duration={duration} />}
       />
     </>
