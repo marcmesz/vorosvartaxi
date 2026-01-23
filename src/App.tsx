@@ -6,7 +6,7 @@ import Introduction from "./components/Sections/Introduction/Introduction"
 import Services from "./components/Sections/Services/Services"
 import Partners from "./components/Sections/Partners/Partners"
 import Contact from "./components/Sections/Contact/Contact"
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import { reducer, initialState } from "./reducers"
 import StateContext from "./context/StateContext"
 import { IntlProvider } from "react-intl"
@@ -20,15 +20,22 @@ interface Messages {
   }
 }
 
+const messages: Messages = {
+  hu: messages_hu,
+  en: messages_en,
+  de: messages_de
+}
+
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { locale } = state
 
-  const messages: Messages = {
-    hu: messages_hu,
-    en: messages_en,
-    de: messages_de
-  }
+  useEffect(() => {
+    const newVersion = import.meta.env.VITE_APP_VERSION
+    if (localStorage.getItem("version") !== newVersion) {
+      localStorage.setItem("version", newVersion || "N/A")
+    }
+  }, [])
 
   return (
     <StateContext.Provider value={{ state, dispatch }}>

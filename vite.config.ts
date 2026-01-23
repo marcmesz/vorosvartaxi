@@ -1,8 +1,12 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import svgr from "vite-plugin-svgr"
+import pkg from "./package.json"
 
 export default defineConfig({
+  define: {
+    "import.meta.env.VITE_APP_VERSION": JSON.stringify(pkg.version),
+  },
   plugins: [react(), svgr()],
   build: {
     outDir: "build",
