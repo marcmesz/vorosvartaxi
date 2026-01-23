@@ -8,10 +8,21 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # we need to fetch all branches and commits so that `npm version` can find the latest tag
+          fetch-depth: 0
+
+      - name: Bump version
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          npm version patch -m "chore(release): Bump version to %s [skip ci]"
+          git push --follow-tags
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
